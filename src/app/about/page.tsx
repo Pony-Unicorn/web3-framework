@@ -1,15 +1,6 @@
 'use client'
 
-import {
-  Cloud,
-  Heart,
-  Moon,
-  Mountain,
-  Sparkles,
-  Star,
-  Sun,
-  Zap,
-} from 'lucide-react'
+import { Heart, Sparkles, Star, Zap } from 'lucide-react'
 import { motion } from 'motion/react'
 
 import { Badge } from '@/components/ui/badge'
@@ -96,7 +87,7 @@ export default function AboutPage() {
                   <span className="text-4xl">🐴</span>
                 </div>
                 <h2 className="text-foreground text-2xl font-bold md:text-3xl">
-                  Hi, I'm Pony
+                  Hi, I&apos;m Pony
                 </h2>
                 <p className="text-muted-foreground mt-2 text-lg">
                   A passionate self-taught Software developer 👋🏼
@@ -110,7 +101,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-foreground">
-                      I'm a{' '}
+                      I&apos;m a
                       <span className="text-primary font-semibold">
                         decentralized believer
                       </span>
@@ -125,7 +116,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-foreground">
-                      Currently my main job{' '}
+                      Currently my main job
                       <span className="text-accent font-semibold">GameFi</span>.
                     </p>
                   </div>
@@ -137,14 +128,14 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-foreground">
-                      I'm currently learning{' '}
+                      I&apos;m currently learning
                       <span className="text-primary font-semibold">
                         Algorithm design
-                      </span>{' '}
-                      and{' '}
+                      </span>
+                      and
                       <span className="text-primary font-semibold">
                         Blockchain
-                      </span>{' '}
+                      </span>
                       related knowledge.
                     </p>
                   </div>
@@ -156,7 +147,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="text-foreground">
-                      How to reach me: Check out my{' '}
+                      How to reach me: Check out my
                       <a
                         href="https://github.com/Pony-Unicorn"
                         target="_blank"
@@ -164,8 +155,8 @@ export default function AboutPage() {
                         className="text-accent hover:text-accent/80 underline transition-colors"
                       >
                         GitHub
-                      </a>{' '}
-                      or create{' '}
+                      </a>
+                      or create
                       <a
                         href="https://github.com/Pony-Unicorn/web3-framework/issues"
                         target="_blank"
@@ -173,7 +164,7 @@ export default function AboutPage() {
                         className="text-accent hover:text-accent/80 underline transition-colors"
                       >
                         issues
-                      </a>{' '}
+                      </a>
                       to discuss.
                     </p>
                   </div>

@@ -1,6 +1,6 @@
 {
   "name": "web3-framework",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "description": "dApp framework built using Next.js, @reown/appkit and more! ",
