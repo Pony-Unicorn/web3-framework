@@ -114,6 +114,13 @@ pnpm run deploy
   - Recommend using Cloudflare Pages for deployment
   - Download your Pages project config `npx wrangler pages download config <PROJECT_NAME>`
 
+## Shadcn/ui Theme Tooling
+
+- [tweakcn](https://tweakcn.com/) - 近乎完美的主题生成器，自定义颜色、字体和布局，以及 AI 生成并实时预览
+- [tinte](https://www.tinte.dev/shadcn) - 自带 4000+ 主题同时支持 AI 生成
+- [rlabs generate](https://shadcn.rlabs.art/generate) - 功能单一的主题生成器，默认也有很多主题可选
+- [10000+ Themes](https://ui.jln.dev/) - 10000+ 的主题
+
 ## 📁 Project directory structure
 
 ```text
