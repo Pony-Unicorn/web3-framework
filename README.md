@@ -102,6 +102,7 @@ pnpm run deploy
 
 ## 🤖 AI Development
 
+- [rules](https://cursor.directory/rules) - 官方规则参考
 - [cursor](https://www.cursor.com/cn) - AI Code Editor
   - `.cursor/rules`: [Rules](https://docs.cursor.com/context/rules#domain-specific-guidance) for Cursor AI-assisted development
   - `.cursorignore`: Files to ignore during AI code operations
