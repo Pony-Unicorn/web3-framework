@@ -4,38 +4,39 @@ import { motion } from 'motion/react'
 
 import { isTestnets, version } from '@/constants/app'
 import { env } from '@/constants/env'
+import { useText } from '@/hooks/useText'
 import { Badge } from '@/components/ui/badge'
 import { CopyButton } from '@/components/elements/CopyButton'
 
 const features = [
   {
-    title: 'Next.js + shadcn/ui',
-    description: '强大且现代的全栈 UI 架构',
+    titleKey: 'home.features.nextjs-shadcn.title',
+    descriptionKey: 'home.features.nextjs-shadcn.description',
     icon: '🧱',
   },
   {
-    title: 'Tailwind CSS',
-    description: '原子化 CSS，快速搭建响应式 UI',
+    titleKey: 'home.features.tailwind.title',
+    descriptionKey: 'home.features.tailwind.description',
     icon: '🎨',
   },
   {
-    title: 'Framer Motion',
-    description: '炫酷且顺滑的动画体验',
+    titleKey: 'home.features.motion.title',
+    descriptionKey: 'home.features.motion.description',
     icon: '🌀',
   },
   {
-    title: 'Wagmi + viem',
-    description: '下一代 EVM 钱包交互工具',
+    titleKey: 'home.features.wagmi.title',
+    descriptionKey: 'home.features.wagmi.description',
     icon: '🔐',
   },
   {
-    title: '@reown/appkit',
-    description: '一站式 DApp 构建集成方案',
+    titleKey: 'home.features.appkit.title',
+    descriptionKey: 'home.features.appkit.description',
     icon: '🚀',
   },
   {
-    title: '开箱即用',
-    description: '快速启动，支持拓展与定制',
+    titleKey: 'home.features.ready.title',
+    descriptionKey: 'home.features.ready.description',
     icon: '⏱',
   },
 ]
@@ -43,6 +44,8 @@ const features = [
 const createCommandStr = 'pnpm dlx degit Pony-Unicorn/web3-framework my-project'
 
 export default function Home() {
+  const { t } = useText()
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <motion.div
@@ -51,9 +54,9 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="mb-12 text-center"
       >
-        <h1 className="mb-4 text-4xl font-bold">Bolt 是构建 Dapp 的新起点</h1>
+        <h1 className="mb-4 text-4xl font-bold">{t('home.title')}</h1>
         <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
-          快速启动，模块清晰，组件现代，是你构建下一代 Web3 应用的理想起点
+          {t('home.description')}
         </p>
         <div className="flex justify-center">
           <CopyButton
@@ -71,16 +74,16 @@ export default function Home() {
       <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <motion.div
-            key={feature.title}
+            key={feature.titleKey}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800"
           >
             <div className="mb-2 text-3xl">{feature.icon}</div>
-            <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
+            <h3 className="mb-2 text-xl font-semibold">{t(feature.titleKey)}</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              {feature.description}
+              {t(feature.descriptionKey)}
             </p>
           </motion.div>
         ))}
@@ -88,12 +91,12 @@ export default function Home() {
 
       <div className="border-primary/10 bg-background/80 mt-20 mb-16 rounded-xl border py-4 shadow-sm">
         <h2 className="mb-8 text-center text-3xl font-bold tracking-tight">
-          框架信息
+          {t('home.info.title')}
         </h2>
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="flex items-center gap-2">
             <span className="text-muted-foreground text-sm font-medium">
-              Version:
+              {t('home.info.version')}:
             </span>
             <Badge className="mt-1" variant="secondary">
               {version}
@@ -101,7 +104,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-muted-foreground text-sm font-medium">
-              Mode:
+              {t('home.info.mode')}:
             </span>
             <Badge className="mt-1" variant="outline">
               {env.NEXT_PUBLIC_APP_MODE}
@@ -109,7 +112,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-muted-foreground text-sm font-medium">
-              Use Testnets:
+              {t('home.info.testnets')}:
             </span>
             <Badge
               className="mt-1"
@@ -120,7 +123,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-muted-foreground text-sm font-medium">
-              Last Update:
+              {t('home.info.lastUpdate')}:
             </span>
             <Badge className="mt-1" variant="secondary">
               2025-05-16
@@ -132,7 +135,7 @@ export default function Home() {
       {/* Tech Stack */}
       <div className="mt-16">
         <h2 className="mb-8 text-center text-3xl font-bold tracking-tight">
-          技术栈
+          {t('home.techStack')}
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
           {[

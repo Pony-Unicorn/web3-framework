@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import useScroll from '@/hooks/use-scroll'
+import { useText } from '@/hooks/useText'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -15,31 +16,31 @@ import {
 } from '@/components/ui/navigation-menu'
 
 interface NavItem {
-  label: string
+  labelKey: string
   href: string
   target?: HTMLAttributeAnchorTarget
 }
 
 const navItems: NavItem[] = [
   {
-    label: '首页',
+    labelKey: 'nav.home',
     href: '/',
   },
   {
-    label: '预览',
+    labelKey: 'nav.preview',
     href: '/preview',
   },
   {
-    label: '关于',
+    labelKey: 'nav.about',
     href: '/about',
   },
   {
-    label: 'Github',
+    labelKey: 'Github',
     href: 'https://github.com/Pony-Unicorn/web3-framework',
     target: '_blank',
   },
   {
-    label: 'X',
+    labelKey: 'X',
     href: 'https://x.com/shunfengge',
     target: '_blank',
   },
@@ -48,6 +49,7 @@ const navItems: NavItem[] = [
 export function SiteHeader() {
   const scrolled = useScroll()
   const pathname = usePathname()
+  const { t } = useText()
 
   return (
     <header
@@ -75,8 +77,8 @@ export function SiteHeader() {
               </NavigationMenuLink>
             </NavigationMenuItem>
 
-            {navItems.map(({ label, href, target }) => (
-              <NavigationMenuItem key={label}>
+            {navItems.map(({ labelKey, href, target }) => (
+              <NavigationMenuItem key={labelKey}>
                 <NavigationMenuLink
                   asChild
                   active={pathname === href}
@@ -84,7 +86,7 @@ export function SiteHeader() {
                 >
                   <Link href={href} target={target}>
                     <span className="relative inline-block">
-                      {label}
+                      {t(labelKey, labelKey)}
                       {target === '_blank' && (
                         <ArrowUpRight
                           size={12}
@@ -103,7 +105,6 @@ export function SiteHeader() {
         {/* <MobileNav /> */}
 
         <div className="hidden flex-1 items-center justify-between space-x-2 md:flex md:justify-end">
-          {/* <LanguageToggle /> */}
           {/* <ThemeToggle /> */}
           <appkit-button />
         </div>

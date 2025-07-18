@@ -140,6 +140,7 @@ src/
 │   ├── ui/                  # shadcn/ui 自动生成的 UI 组件
 │   ├── layouts/             # 页面布局组件（如 MainLayout、AuthLayout）
 │   ├── shared/              # 多页面复用组件（如 Header、Footer）
+│   ├── reactbits/           # reactbits 动画组件
 │   └── elements/            # 小型功能组件（如 Modal、Toast、Loading）
 
 ├── constants/               # 所有配置文件和常量

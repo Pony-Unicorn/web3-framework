@@ -5,6 +5,7 @@ import { Home } from 'lucide-react'
 import { motion } from 'motion/react'
 
 import { Button } from '@/components/ui/button'
+import FuzzyText from '@/components/reactbits/FuzzyText'
 
 export default function NotFound() {
   return (
@@ -13,9 +14,19 @@ export default function NotFound() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-8"
+        className="mb-8 flex flex-col items-center justify-center"
       >
-        <div className="text-primary/20 mb-6 text-8xl font-bold">404</div>
+        <div className="mb-5">
+          <FuzzyText
+            baseIntensity={0.3}
+            // hoverIntensity={hoverIntensity}
+            // enableHover={enableHover}
+            color="#ee9a00ff"
+          >
+            404
+          </FuzzyText>
+        </div>
+
         <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
           页面未找到
         </h1>
