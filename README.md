@@ -182,6 +182,5 @@ src/
 - [ ] 更改字体，避免本地开发和打包时在国内加载不稳定
 - [ ] 一些常见配置
 - [ ] husky
-- [ ] 多语言：直接使用 next-intl https://github.com/amannn/next-intl
 - [ ] 字体: 开发模式使用谷歌字体可能导致获取不到，是否使用本地模式，https://fontsource.org/
 - [ ] 升级依赖库
