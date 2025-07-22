@@ -7,7 +7,6 @@ import { ArrowUpRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import useScroll from '@/hooks/use-scroll'
-import { useText } from '@/hooks/useText'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -16,31 +15,31 @@ import {
 } from '@/components/ui/navigation-menu'
 
 interface NavItem {
-  labelKey: string
+  label: string
   href: string
   target?: HTMLAttributeAnchorTarget
 }
 
 const navItems: NavItem[] = [
   {
-    labelKey: 'nav.home',
+    label: '首页',
     href: '/',
   },
   {
-    labelKey: 'nav.preview',
+    label: '预览',
     href: '/preview',
   },
   {
-    labelKey: 'nav.about',
+    label: '关于',
     href: '/about',
   },
   {
-    labelKey: 'Github',
+    label: 'Github',
     href: 'https://github.com/Pony-Unicorn/web3-framework',
     target: '_blank',
   },
   {
-    labelKey: 'X',
+    label: 'X',
     href: 'https://x.com/shunfengge',
     target: '_blank',
   },
@@ -49,7 +48,6 @@ const navItems: NavItem[] = [
 export function SiteHeader() {
   const scrolled = useScroll()
   const pathname = usePathname()
-  const { t } = useText()
 
   return (
     <header
@@ -77,8 +75,8 @@ export function SiteHeader() {
               </NavigationMenuLink>
             </NavigationMenuItem>
 
-            {navItems.map(({ labelKey, href, target }) => (
-              <NavigationMenuItem key={labelKey}>
+            {navItems.map(({ label, href, target }) => (
+              <NavigationMenuItem key={label}>
                 <NavigationMenuLink
                   asChild
                   active={pathname === href}
@@ -86,7 +84,7 @@ export function SiteHeader() {
                 >
                   <Link href={href} target={target}>
                     <span className="relative inline-block">
-                      {t(labelKey, labelKey)}
+                      {label}
                       {target === '_blank' && (
                         <ArrowUpRight
                           size={12}
