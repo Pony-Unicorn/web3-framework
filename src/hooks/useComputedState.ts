@@ -52,20 +52,32 @@ export function useComputedState<T, U = T>(
 ) {
   const [realValue, setRealValue] = useState<T>(initialValue)
 
-  // 若未传入 compute，则使用恒等函数
-  const finalCompute = compute ?? ((v: any) => v as U)
-
   // 根据 realValue 计算派生值
-  const displayValue = useMemo(
-    () => finalCompute(realValue),
-    [realValue, finalCompute]
-  )
+  const displayValue = useMemo(() => {
+    if (compute) {
+      try {
+        return compute(realValue)
+      } catch (error) {
+        console.warn(
+          'useComputedState: compute function threw an error:',
+          error
+        )
+        // 降级到恒等函数
+        return realValue as unknown as U
+      }
+    }
+    // 当 U = T 时，直接返回 realValue 是类型安全的
+    return realValue as unknown as U
+  }, [realValue, compute])
 
   // 支持函数式更新（与 useState 相同）
   const updateRealValue = useCallback((next: T | ((prev: T) => T)) => {
-    setRealValue((prev) =>
-      typeof next === 'function' ? (next as (p: T) => T)(prev) : next
-    )
+    setRealValue((prev) => {
+      if (typeof next === 'function') {
+        return (next as (prev: T) => T)(prev)
+      }
+      return next
+    })
   }, [])
 
   return { realValue, setRealValue: updateRealValue, displayValue }

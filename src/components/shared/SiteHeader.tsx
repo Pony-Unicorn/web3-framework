@@ -1,6 +1,7 @@
 'use client'
 
 import { HTMLAttributeAnchorTarget } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ArrowUpRight } from 'lucide-react'
@@ -66,10 +67,12 @@ export function SiteHeader() {
                 className="hover:text-foreground active:text-foreground focus:text-foreground hover:bg-transparent focus:bg-transparent focus:outline-none active:bg-transparent"
               >
                 <Link href="/">
-                  <img
+                  <Image
+                    // src="/bolt-logo-transparent-mini.png"
                     src="/bolt-logo-transparent.png"
+                    width={112}
+                    height={112}
                     alt="bolt logo"
-                    className="h-14 w-auto"
                   />
                 </Link>
               </NavigationMenuLink>
