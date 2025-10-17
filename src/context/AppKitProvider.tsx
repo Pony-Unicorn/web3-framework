@@ -10,7 +10,6 @@ import { WagmiProvider, type Config } from 'wagmi'
 import { isTestnets } from '@/constants/app'
 import { env } from '@/constants/env'
 
-// Get projectId from https://cloud.reown.com
 export const projectId = env.NEXT_PUBLIC_PROJECT_ID
 
 export const networks: [AppKitNetwork, ...AppKitNetwork[]] = isTestnets
@@ -19,7 +18,7 @@ export const networks: [AppKitNetwork, ...AppKitNetwork[]] = isTestnets
 
 //Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
-  ssr: true,
+  // ssr: false,
   projectId,
   networks,
 })
@@ -31,7 +30,7 @@ const queryClient = new QueryClient()
 const metadata = {
   name: 'appkit-example',
   description: 'AppKit Example',
-  url: 'https://appkitexampleapp.com', // origin must match your domain & subdomain
+  url: 'https://bolt.testbug.cc', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932'],
 }
 
@@ -51,13 +50,12 @@ export const modal = createAppKit({
     swaps: false,
     onramp: false,
   },
-  allWallets: 'ONLY_MOBILE',
+  // allWallets: 'ONLY_MOBILE',
   debug: isTestnets,
-  enableWalletConnect: false, // default to true, Remove trust wallet and WalletConnect
   enableEIP6963: true,
   enableCoinbase: false, // default to true, Remove Coinbase
   featuredWalletIds: [
-    '971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709',
+    // '971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709',
   ],
 })
 
