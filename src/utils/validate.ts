@@ -18,7 +18,7 @@ export const isArray = <T = unknown>(input: unknown): input is T[] =>
 
 // object（不校验 shape，仅判断是否为非 null 的 object）
 export const isObject = (input: unknown): input is Record<string, unknown> =>
-  z.record(z.any()).safeParse(input).success
+  z.record(z.string(), z.any()).safeParse(input).success
 
 // bigint
 export const isBigInt = (input: unknown): input is bigint =>

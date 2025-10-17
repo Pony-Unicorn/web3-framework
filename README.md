@@ -111,7 +111,6 @@ pnpm run deploy
 
 - [vercel](https://vercel.com/docs/project-configuration) - vercel Configuring projects
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/) - Cloudflare Pages
-
   - Recommend using Cloudflare Pages for deployment
   - Download your Pages project config `npx wrangler pages download config <PROJECT_NAME>`
 
@@ -178,8 +177,6 @@ src/
 
 ## ✅ Todo List
 
-- [ ] 升级依赖库
 - [ ] 字体: 字体下载到本地使用避免开发中获取不到谷歌字体问题
-- [ ] preview 页面开发
 - [ ] 一些常见配置
 - [ ] husky

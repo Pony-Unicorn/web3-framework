@@ -10,24 +10,17 @@ import { Separator } from '@/components/ui/separator'
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: 'easeOut' },
+}
+
+const fadeInUpTransition = {
+  duration: 0.8,
 }
 
 const staggerContainer = {
+  initial: {},
   animate: {
     transition: {
       staggerChildren: 0.2,
-    },
-  },
-}
-
-const floatingAnimation = {
-  animate: {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: 'easeInOut',
     },
   },
 }
@@ -47,26 +40,41 @@ export default function AboutPage() {
         {/* Floating Elements */}
         <motion.div
           className="text-primary/30 absolute top-20 left-10"
-          variants={floatingAnimation}
+          animate={{
+            y: [-10, 10, -10],
+            transition: {
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            },
+          }}
         >
           <Sparkles size={40} />
         </motion.div>
         <motion.div
           className="text-accent/30 absolute top-40 right-20"
-          variants={floatingAnimation}
           animate={{
-            ...floatingAnimation.animate,
-            transition: { ...floatingAnimation.animate.transition, delay: 1 },
+            y: [-10, 10, -10],
+            transition: {
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1,
+            },
           }}
         >
           <Star size={30} />
         </motion.div>
         <motion.div
           className="text-primary/30 absolute bottom-20 left-1/4"
-          variants={floatingAnimation}
           animate={{
-            ...floatingAnimation.animate,
-            transition: { ...floatingAnimation.animate.transition, delay: 2 },
+            y: [-10, 10, -10],
+            transition: {
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 2,
+            },
           }}
         >
           <Heart size={35} />
@@ -76,11 +84,16 @@ export default function AboutPage() {
           <motion.h1
             className="from-primary via-primary/80 to-accent mb-6 bg-gradient-to-r bg-clip-text text-5xl font-bold text-transparent md:text-7xl"
             variants={fadeInUp}
+            transition={fadeInUpTransition}
           >
             关于我
           </motion.h1>
 
-          <motion.div className="mx-auto max-w-3xl" variants={fadeInUp}>
+          <motion.div
+            className="mx-auto max-w-3xl"
+            variants={fadeInUp}
+            transition={fadeInUpTransition}
+          >
             <div className="border-border/50 bg-card/30 rounded-2xl border p-8 backdrop-blur-sm md:p-12">
               <div className="mb-8 text-center">
                 <div className="from-primary to-accent mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br">
@@ -186,7 +199,11 @@ export default function AboutPage() {
         variants={staggerContainer}
       >
         <div className="mx-auto max-w-4xl">
-          <motion.div className="mb-16 text-center" variants={fadeInUp}>
+          <motion.div
+            className="mb-16 text-center"
+            variants={fadeInUp}
+            transition={fadeInUpTransition}
+          >
             <h2 className="text-foreground mb-6 text-4xl font-bold">
               技能与兴趣
             </h2>
@@ -196,7 +213,7 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} transition={fadeInUpTransition}>
               <Card className="bg-card/50 border-0 shadow-lg backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="mb-6 flex items-center gap-3">
@@ -226,7 +243,7 @@ export default function AboutPage() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} transition={fadeInUpTransition}>
               <Card className="bg-card/50 border-0 shadow-lg backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="mb-6 flex items-center gap-3">
@@ -271,6 +288,7 @@ export default function AboutPage() {
           <motion.div
             className="from-primary to-accent text-primary-foreground rounded-3xl bg-gradient-to-r p-8 md:p-12"
             variants={fadeInUp}
+            transition={fadeInUpTransition}
           >
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">
               让我们一起构建未来
