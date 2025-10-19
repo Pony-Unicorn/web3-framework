@@ -84,6 +84,8 @@ pnpm run deploy
 ## ⚙️ Environment Configuration
 
 - [.env](https://env.t3.gg/docs/core) - define environment variables validation for your app.
+- development .env.development.local
+- production .env.production.local
 
 ## Third-Party Libraries
 
@@ -177,7 +179,7 @@ src/
 
 ## ✅ Todo List
 
-- [ ] AppKit SDK version 1.8.9 is outdated. Latest version is 1.8.10
+- [ ] reown/AppKit 版本、链接等已知问题，SDK version 1.8.9 is outdated. Latest version is 1.8.10
 - [ ] 字体: 字体下载到本地使用避免开发中获取不到谷歌字体问题
 - [ ] 一些常见配置
 - [ ] husky

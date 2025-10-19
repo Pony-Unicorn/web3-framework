@@ -1,6 +1,6 @@
 {
   "name": "web3-framework",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "license": "MIT",
   "description": "dApp framework built using Next.js, @reown/appkit and more! ",
@@ -74,6 +74,19 @@
     "overrides": {
       "@types/react": "19.2.2",
       "@types/react-dom": "19.2.2"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@ffmpeg-installer/darwin-arm64",
+      "@reown/appkit",
+      "@tailwindcss/oxide",
+      "bufferutil",
+      "cpu-features",
+      "esbuild",
+      "keccak",
+      "sharp",
+      "unrs-resolver",
+      "utf-8-validate",
+      "workerd"
+    ]
   }
 }
