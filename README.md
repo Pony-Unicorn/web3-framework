@@ -157,7 +157,7 @@ src/
 ├── hooks/                   # 自定义 Hook
 │   └── useDebounce.ts
 
-├── lib/                     # 第三方库的封装（如 axios、shadcn/ui 工具函数的封装）属于“外部库的本地适配器”
+├── lib/                     # 第三方库的封装（如 axios、shadcn/ui 工具函数的封装）属于“外部库的适配器”
 │   ├── axios.ts             # axios 实例
 │   └── utils.ts             # shadcn/ui 的 `cn` 函数自动生成
 
@@ -169,6 +169,15 @@ src/
 │   ├── common.ts            # 通用工具函数
 │   ├── format.ts            # 日期/金额、钱包地址等所有格式化工具类
 │   └── validate.ts          # 所有验证工具类
+
+docs/
+├── api.md                   # api 文档
+├── overview.md              # 项目概述
+├── architecture.md          # 项目架构
+
+llms/                        # llms 文档目录
+├── shadcn-ui-llms.txt       # shadcn/ui 例 curl -L https://ui.shadcn.com/llms.txt -o shadcn-ui-llms.txt
+
 ```
 
 ## 常用命令
