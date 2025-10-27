@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react'
 
-import { isTestnets, version } from '@/constants/app'
+import { isTestnets, VERSION } from '@/constants/app'
 import { env } from '@/constants/env'
 import { Badge } from '@/components/ui/badge'
 import { CopyButton } from '@/components/elements/CopyButton'
@@ -97,7 +97,7 @@ export default function Home() {
               版本:
             </span>
             <Badge className="mt-1" variant="secondary">
-              {version}
+              {VERSION}
             </Badge>
           </div>
           <div className="flex items-center gap-2">
