@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react'
 
-import { isTestnets, VERSION } from '@/constants/app'
+import { IS_DEV, VERSION } from '@/constants/app'
 import { env } from '@/constants/env'
 import { Badge } from '@/components/ui/badge'
 import { CopyButton } from '@/components/elements/CopyButton'
@@ -43,7 +43,6 @@ const features = [
 const createCommandStr = 'pnpm dlx degit Pony-Unicorn/web3-framework my-project'
 
 export default function Home() {
-  
   return (
     <div className="container mx-auto px-4 py-8">
       <motion.div
@@ -114,9 +113,9 @@ export default function Home() {
             </span>
             <Badge
               className="mt-1"
-              variant={isTestnets ? 'destructive' : 'default'}
+              variant={IS_DEV ? 'destructive' : 'default'}
             >
-              {isTestnets.toString().toUpperCase()}
+              {IS_DEV.toString().toUpperCase()}
             </Badge>
           </div>
           <div className="flex items-center gap-2">

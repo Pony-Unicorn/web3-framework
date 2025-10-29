@@ -6,16 +6,11 @@ export const env = createEnv({
 
   client: {
     NEXT_PUBLIC_APP_MODE: z.enum(['pro', 'dev']).default('dev'),
-    NEXT_PUBLIC_USE_TESTNETS: z
-      .enum(['true', 'false'])
-      .default(process.env.NEXT_PUBLIC_APP_MODE === 'pro' ? 'false' : 'true')
-      .transform((val) => val === 'true'),
     NEXT_PUBLIC_PROJECT_ID: z.string().min(32),
   },
 
   runtimeEnvStrict: {
     NEXT_PUBLIC_APP_MODE: process.env.NEXT_PUBLIC_APP_MODE,
-    NEXT_PUBLIC_USE_TESTNETS: process.env.NEXT_PUBLIC_USE_TESTNETS,
     NEXT_PUBLIC_PROJECT_ID: process.env.NEXT_PUBLIC_PROJECT_ID,
   },
 

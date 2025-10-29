@@ -7,14 +7,14 @@ import { createAppKit } from '@reown/appkit/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider, type Config } from 'wagmi'
 
-import { isTestnets } from '@/constants/app'
+import { IS_PRO } from '@/constants/app'
 import { env } from '@/constants/env'
 
 export const projectId = env.NEXT_PUBLIC_PROJECT_ID
 
-export const networks: [AppKitNetwork, ...AppKitNetwork[]] = isTestnets
-  ? [sepolia]
-  : [mainnet]
+export const networks: [AppKitNetwork, ...AppKitNetwork[]] = IS_PRO
+  ? [mainnet]
+  : [sepolia]
 
 //Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
@@ -51,7 +51,7 @@ export const modal = createAppKit({
     onramp: false,
   },
   // allWallets: 'ONLY_MOBILE',
-  debug: isTestnets,
+  debug: !IS_PRO,
   enableEIP6963: true,
   enableCoinbase: false, // default to true, Remove Coinbase
   featuredWalletIds: [
