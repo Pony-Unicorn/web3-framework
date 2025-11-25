@@ -6,10 +6,10 @@ import './globals.css'
 import AppKitProvider from '@/context/AppKitProvider'
 import { ThemeProvider } from 'next-themes'
 
-import { Toaster } from '@/components/ui/sonner'
 import { TailwindIndicator } from '@/components/elements/TailwindIndicator'
 import { Footer } from '@/components/shared/Footer'
 import { SiteHeader } from '@/components/shared/SiteHeader'
+import { Toaster } from '@/components/ui/sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

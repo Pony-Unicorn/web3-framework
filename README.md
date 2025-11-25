@@ -188,7 +188,6 @@ llms/                        # llms 文档目录
 
 ## ✅ Todo List
 
-- [ ] reown/AppKit 版本、链接等已知问题，SDK version 1.8.9 is outdated. Latest version is 1.8.10
 - [ ] 字体: 字体下载到本地使用避免开发中获取不到谷歌字体问题
 - [ ] 一些常见配置
 - [ ] husky

@@ -5,8 +5,8 @@ import { motion } from 'motion/react'
 import { IS_DEV, VERSION } from '@/constants/app'
 import { env } from '@/constants/env'
 
-import { Badge } from '@/components/ui/badge'
 import { CopyButton } from '@/components/elements/CopyButton'
+import { Badge } from '@/components/ui/badge'
 
 const features = [
   {

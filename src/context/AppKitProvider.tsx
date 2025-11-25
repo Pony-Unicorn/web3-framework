@@ -1,10 +1,10 @@
 'use client'
 
-import React, { type ReactNode } from 'react'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import { AppKitNetwork, mainnet, sepolia } from '@reown/appkit/networks'
 import { createAppKit } from '@reown/appkit/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { type ReactNode } from 'react'
 import { WagmiProvider, type Config } from 'wagmi'
 
 import { IS_PRO } from '@/constants/app'

@@ -1,11 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import { Home } from 'lucide-react'
 import { motion } from 'motion/react'
+import Link from 'next/link'
 
-import { Button } from '@/components/ui/button'
 import FuzzyText from '@/components/reactbits/FuzzyText'
+import { Button } from '@/components/ui/button'
 
 export default function NotFound() {
   return (
