@@ -1,3 +1,5 @@
+import Demo from '~/features/demo/Home'
+
 export default function Home() {
-  return <div>this home</div>
+  return <Demo />
 }

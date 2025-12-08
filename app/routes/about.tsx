@@ -258,7 +258,7 @@ export default function About() {
                       'DeFi 协议设计',
                       '智能合约审计',
                       '区块链架构',
-                      '算法优化',
+                      '量化交易',
                       '去中心化应用',
                     ].map((area) => (
                       <div key={area} className="flex items-center gap-3">

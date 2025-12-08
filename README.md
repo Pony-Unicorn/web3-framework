@@ -1,6 +1,6 @@
 # Bolt
 
-> A fast, modular Web3 starter built with **Next.js**, **shadcn/ui**, **Tailwind CSS**, **Motion**, and the latest in wallet tooling: **Wagmi**, **viem**, and **@reown/appkit**.
+> A fast, modular Web3 starter built with **React Router**, **shadcn/ui**, **Tailwind CSS**, **Motion**, and the latest in wallet tooling: **Wagmi**, **viem**, and **@reown/appkit**.
 
 **Bolt 是一款专为 Web3 DApp 开发打造的现代前端模板**，内置最先进的钱包接入工具与设计系统，结合主流最佳实践，旨在帮助开发者以更快速度构建高质量的链上应用。
 
@@ -8,7 +8,7 @@
 
 ## 📦 更新策略
 
-- 本项目会在每月 10 号定期更新所安装的前端依赖（如 npm 包等），以保持项目的安全性和兼容性。更新内容包括但不限于：
+- 每月 10 号定期更新所安装的前端依赖（如 npm 包等），以保持项目的安全性和兼容性。更新内容包括但不限于：
   - 安全补丁与漏洞修复
   - 小版本功能更新
   - 与主要依赖库的适配更新
@@ -19,12 +19,12 @@
 
 ## ⚡️ 特性 Features
 
-- 🧱 **Next.js + shadcn/ui** — 强大且现代的全栈 UI 架构
+- 🧱 **React Router + shadcn/ui** — 强大且现代的全栈 UI 架构
 - 🎨 **Tailwind CSS** — 原子化 CSS，快速搭建响应式 UI
 - 🌀 **Framer Motion** — 炫酷且顺滑的动画体验
 - 🔐 **Wagmi + viem** — 下一代 EVM 钱包交互工具
 - 🚀 **@reown/appkit** — 一站式 DApp 构建集成方案
-- 🧹 **ESLint + Prettier** — 内建代码风格统一与格式校验
+- 🧹 **Prettier** — 代码风格统一
 - ⚙️ **约定式目录结构** — 支持合约 ABI、env 环境变量、类型声明等规范组织
 - ⏱ **开箱即用** — 快速启动，支持拓展与定制
 
@@ -61,11 +61,10 @@ pnpm run deploy
 ## 🧱 Core Dependencies
 
 - [react](https://react.dev/) - The library for web and native user interfaces
-- [nextjs](https://nextjs.org/) - The React Framework for the Web
+- [react router](https://reactrouter.com/start/framework/routing) - React Router
 - [TailwindCSS](https://tailwindcss.com) – Utility-first CSS framework for rapid UI development
 - [Radix](https://www.radix-ui.com/) – Primitives like modal, popover, etc. to build a stellar user experience
 - [shadcn/ui](https://ui.shadcn.com) - components are included in the `/components/ui` folder
-- [next-themes](https://github.com/pacocoursey/next-themes) - next themes
 - [lucide](https://lucide.dev/) – Beautiful & consistent icons Made by the community.
 - [Motion](https://www.framer.com/motion/) – A modern animation library
 - [Font animation reference](https://variantvault.chrisabdo.dev/text-variants)
@@ -76,10 +75,7 @@ pnpm run deploy
 - Node Js: Use .nvmrc file for management, the version is lts/iron, it is recommended to use fnm as version management
 - [pnpm](https://pnpm.io/) - The package manager must be pnpm, and the recommended version is the LTS version.
 - [.gitignore](https://git-scm.com/docs/gitignore/zh_HANS-CN) - Git ignore files
-- [ESLint](https://eslint.org/) - statically analyzes your code to quickly find problems.
 - [prettier](https://prettier.io/) - Prettier is an opinionated code formatter
-- [ ] [husky](https://typicode.github.io/husky/zh/get-started.html) - Automatically check commit messages, verify code, and run tests during commits or pushes.
-- [assetpack](https://pixijs.io/assetpack/docs/guide/getting-started/installation/) - It can be used to transform, combine, compress assets.
 
 ## ⚙️ Environment Configuration
 
@@ -89,12 +85,12 @@ pnpm run deploy
 
 ## Third-Party Libraries
 
-- [axios](https://www.axios-http.cn/docs/intro) - Axios is a promise-based HTTP Client for node.js and the browser
-- [swr](https://swr.vercel.app/zh-CN) - React Hooks library for data requests
+- [ky](https://github.com/sindresorhus/ky) - Tiny & elegant JavaScript HTTP client based on the Fetch API
+- [TanStack Query](https://tanstack.com/query/v5/docs/framework/react/quick-start) - React Hooks library for data requests
 - [dayjs](https://day.js.org/zh-CN/) - Lightweight processing time and date library
 - [react-hook-form](https://react-hook-form.com/) - Form validation library
 - [zod](https://zod.dev/) - TypeScript-first schema validation with static type inference
-- zustand In fact, maybe you really don’t need state management in nextjs
+- [zustand](https://zustand-demo.pmnd.rs/) A small, fast, and scalable bearbones state management solution.
 
 ## 🌐 Domain-specific
 
@@ -126,9 +122,8 @@ pnpm run deploy
 ## 📁 Project directory structure
 
 ```text
-src/
-├── app/                     # App Router, nextjs Folder and file conventions
-│   ├── globals.css          # 全局样式文件，只允许有这一个 css 文件
+app/
+├── app.css                 # 全局样式文件，只允许有这一个 css 文件
 
 ├── features/                # 业务模块，例如首页、登录、用户中心等
 │   └── dashboard/
@@ -139,9 +134,7 @@ src/
 
 ├── components/              # 通用组件
 │   ├── ui/                  # shadcn/ui 自动生成的 UI 组件
-│   ├── layouts/             # 页面布局组件（如 MainLayout、AuthLayout）
 │   ├── shared/              # 多页面复用组件（如 Header、Footer）
-│   ├── reactbits/           # reactbits 动画组件
 │   └── elements/            # 小型功能组件（如 Modal、Toast、Loading）
 
 ├── constants/               # 所有配置文件和常量
@@ -155,10 +148,11 @@ src/
 │   └── AppKitProvider.tsx   # AppKit evm wallet
 
 ├── hooks/                   # 自定义 Hook
+│   ├── useComputedState.ts  # 维护「真实值」与「派生显示值」
 │   └── useDebounce.ts
 
-├── lib/                     # 第三方库的封装（如 axios、shadcn/ui 工具函数的封装）属于“外部库的适配器”
-│   ├── axios.ts             # axios 实例
+├── lib/                     # 第三方库的封装（如 ky、shadcn/ui 工具函数的封装）属于“外部库的适配器”
+│   ├── ky.ts                # ky 实例，对 ky 的二次封装
 │   └── utils.ts             # shadcn/ui 的 `cn` 函数自动生成
 
 ├── types/                   # 类型声明与接口定义
@@ -188,14 +182,15 @@ llms/                        # llms 文档目录
 
 ## ✅ Todo List
 
-- [ ] csr、ssg 设置
 - [ ] 修改 ai 相关文档
-- [ ] 迁移到 react router，大部分应用不需要 SSR，SSR 完全够用，文档教程类拆分使用 Docusaurus
+- [ ] 修改描述文档
+- [ ] 修复控制台错误
+- [ ] 优化 UI
+- [ ] 添加合约读取写入界面
 - [ ] 重点整理下 shadcn/ui 的 add 使用方式
+- [ ] 添加 zustand
 - [ ] ky，对幂等请求加自动重试，结合后端库，TypeScript：给返回值一个“强类型出口”
-- [ ] 去除 swr，使用 @tanstack/react-query 和@lukemorales/query-key-factory，读操作不要使用 toast（刷新可使用），使用静态组件显示（封装查询失败的组件），写操作手动触发，可使用 toast 组件，参考https://tanstack.com/query/latest/docs/framework/react/quick-start 需要手动点击刷新的 enabled: false,设置，useQueries 等常用给出示例
-- [ ] 新建脚本script目录，常用脚本，例如下载 llms 文件
+- [ ] 添加 @tanstack/react-query 和 @lukemorales/query-key-factory 示例，读操作不要使用 toast（刷新可使用），使用静态组件显示（封装查询失败的组件），写操作手动触发，可使用 toast 组件，参考https://tanstack.com/query/latest/docs/framework/react/quick-start 需要手动点击刷新的 enabled: false,设置，useQueries 等常用给出示例
+- [ ] 新建脚本script目录，常用脚本，例如下载 llms 文件，规则等文件
 - [ ] 安全性，token 基于 only Cookie
 - [ ] 字体: 字体下载到本地使用避免开发中获取不到谷歌字体问题
-- [ ] 一些常见配置
-- [ ] husky
