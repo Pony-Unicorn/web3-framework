@@ -1,4 +1,8 @@
-out/
+.assetpack/
+.cursor/
+.react-router/
+docs/
+llms/
+build/
 node_modules/
-.next/
 pnpm-lock.yaml

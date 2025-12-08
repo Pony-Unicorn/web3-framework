@@ -188,6 +188,7 @@ llms/                        # llms 文档目录
 
 ## ✅ Todo List
 
+- [ ] 修改 ai 相关文档
 - [ ] 迁移到 react router，大部分应用不需要 SSR，SSR 完全够用，文档教程类拆分使用 Docusaurus
 - [ ] 重点整理下 shadcn/ui 的 add 使用方式
 - [ ] ky，对幂等请求加自动重试，结合后端库，TypeScript：给返回值一个“强类型出口”
