@@ -188,6 +188,12 @@ llms/                        # llms 文档目录
 
 ## ✅ Todo List
 
+- [ ] 迁移到 react router，大部分应用不需要 SSR，SSR 完全够用，文档教程类拆分使用 Docusaurus
+- [ ] 重点整理下 shadcn/ui 的 add 使用方式
+- [ ] ky，对幂等请求加自动重试，结合后端库，TypeScript：给返回值一个“强类型出口”
+- [ ] 去除 swr，使用 @tanstack/react-query 和@lukemorales/query-key-factory，读操作不要使用 toast（刷新可使用），使用静态组件显示（封装查询失败的组件），写操作手动触发，可使用 toast 组件，参考https://tanstack.com/query/latest/docs/framework/react/quick-start 需要手动点击刷新的 enabled: false,设置，useQueries 等常用给出示例
+- [ ] 新建脚本script目录，常用脚本，例如下载 llms 文件
+- [ ] 安全性，token 基于 only Cookie
 - [ ] 字体: 字体下载到本地使用避免开发中获取不到谷歌字体问题
 - [ ] 一些常见配置
 - [ ] husky
