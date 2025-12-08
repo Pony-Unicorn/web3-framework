@@ -134,6 +134,7 @@ app/
 
 ├── components/              # 通用组件
 │   ├── ui/                  # shadcn/ui 自动生成的 UI 组件
+│   ├── react-bits/          # react-bits 自动生成的 UI 组件
 │   ├── shared/              # 多页面复用组件（如 Header、Footer）
 │   └── elements/            # 小型功能组件（如 Modal、Toast、Loading）
 
@@ -176,9 +177,10 @@ llms/                        # llms 文档目录
 
 ## 常用命令
 
-- 查看当前有哪些包已过时 pnpm outdated
-- 升级到 semver 范围内的最新版本 pnpm up
-- 将依赖升级到最新版本 pnpm up -L axios
+- 使用 shadcn 命令行安装其他组件，自定义安装路径 `-p app/components/react-bits`
+- 查看当前有哪些包已过时 `pnpm outdated`
+- 升级到 semver 范围内的最新版本 `pnpm up`
+- 将依赖升级到最新版本 `pnpm up -L axios`
 
 ## ✅ Todo List
 
@@ -187,8 +189,8 @@ llms/                        # llms 文档目录
 - [ ] 修复控制台错误
 - [ ] 优化 UI
 - [ ] 添加合约读取写入界面
-- [ ] 重点整理下 shadcn/ui 的 add 使用方式
 - [ ] 添加 zustand
+- [ ] 部署 cf 命令
 - [ ] ky，对幂等请求加自动重试，结合后端库，TypeScript：给返回值一个“强类型出口”
 - [ ] 添加 @tanstack/react-query 和 @lukemorales/query-key-factory 示例，读操作不要使用 toast（刷新可使用），使用静态组件显示（封装查询失败的组件），写操作手动触发，可使用 toast 组件，参考https://tanstack.com/query/latest/docs/framework/react/quick-start 需要手动点击刷新的 enabled: false,设置，useQueries 等常用给出示例
 - [ ] 新建脚本script目录，常用脚本，例如下载 llms 文件，规则等文件

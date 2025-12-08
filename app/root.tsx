@@ -11,6 +11,7 @@ import {
 
 import { motion } from 'motion/react'
 import { TailwindIndicator } from '~/components/elements/TailwindIndicator'
+import FuzzyText from '~/components/react-bits/FuzzyText'
 import { Footer } from '~/components/shared/Footer'
 import { SiteHeader } from '~/components/shared/SiteHeader'
 import { Button } from '~/components/ui/button'
@@ -101,7 +102,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         transition={{ duration: 0.5 }}
         className="mb-8 flex flex-col items-center justify-center"
       >
-        {/* <div className="mb-5">
+        <div className="mb-5">
           <FuzzyText
             baseIntensity={0.3}
             // hoverIntensity={hoverIntensity}
@@ -110,11 +111,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
           >
             {message}
           </FuzzyText>
-        </div> */}
+        </div>
 
-        <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-          {message}
-        </h1>
         <p className="text-muted-foreground mb-8 max-w-md text-lg">{details}</p>
 
         {stack && (
