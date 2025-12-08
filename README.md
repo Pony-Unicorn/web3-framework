@@ -188,6 +188,7 @@ llms/                        # llms 文档目录
 
 ## ✅ Todo List
 
+- [ ] csr、ssg 设置
 - [ ] 修改 ai 相关文档
 - [ ] 迁移到 react router，大部分应用不需要 SSR，SSR 完全够用，文档教程类拆分使用 Docusaurus
 - [ ] 重点整理下 shadcn/ui 的 add 使用方式
