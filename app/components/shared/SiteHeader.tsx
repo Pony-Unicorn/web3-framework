@@ -60,7 +60,7 @@ export function SiteHeader() {
           </NavLink>
 
           <a
-            href="https://github.com/Pony-Unicorn/web3-framework"
+            href="https://github.com/Pony-Unicorn/web3-template"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/60 hover:text-foreground/80 relative text-sm font-medium transition-colors"

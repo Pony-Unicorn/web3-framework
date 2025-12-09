@@ -2,18 +2,7 @@
 
 > A fast, modular Web3 starter built with **React Router**, **shadcn/ui**, **Tailwind CSS**, **Motion**, and the latest in wallet tooling: **Wagmi**, **viem**, and **@reown/appkit**.
 
-**Bolt 是一款专为 Web3 DApp 开发打造的现代前端模板**，内置最先进的钱包接入工具与设计系统，结合主流最佳实践，旨在帮助开发者以更快速度构建高质量的链上应用。
-
----
-
-## 📦 更新策略
-
-- 每月 10 号定期更新所安装的前端依赖（如 npm 包等），以保持项目的安全性和兼容性。更新内容包括但不限于：
-  - 安全补丁与漏洞修复
-  - 小版本功能更新
-  - 与主要依赖库的适配更新
-- 如遇重大版本更新，会根据变更内容评估其影响，并视情况推迟合并。
-- 欢迎社区成员在该日之前提交依赖更新的建议或 PR 🙌
+Bolt 基于 React Router、shadcn/ui、Tailwind CSS、Motion 以及最新钱包工具（Wagmi、viem和@reown/appkit）构建的前端模版。
 
 ---
 
@@ -32,12 +21,23 @@
 
 ---
 
+## 📦 更新策略
+
+- 每月 10 号定期更新所安装的前端依赖（如 npm 包等），以保持项目的安全性和兼容性。更新内容包括但不限于：
+  - 安全补丁与漏洞修复
+  - 小版本功能更新
+  - 与主要依赖库的适配更新
+- 如遇重大版本更新，会根据变更内容评估其影响，并视情况推迟合并。
+- 欢迎社区成员在该日之前提交依赖更新的建议或 PR 🙌
+
+---
+
 ## 🚀 Quick Start
 
 - Clone project
 
 ```bash
-pnpm dlx degit Pony-Unicorn/web3-framework my-project
+pnpm dlx degit Pony-Unicorn/web3-template my-project
 
 cd my-project
 
@@ -100,10 +100,9 @@ pnpm run deploy
 
 ## 🤖 AI Development
 
-- [rules](https://cursor.directory/rules) - 官方规则参考
+- [rules](https://cursor.directory/rules) - 规则参考
 - [cursor](https://www.cursor.com/cn) - AI Code Editor
   - `.cursor/rules`: [Rules](https://docs.cursor.com/context/rules#domain-specific-guidance) for Cursor AI-assisted development
-  - `.cursorignore`: Files to ignore during AI code operations
 
 ## 🛰️ Deployment
 
@@ -111,6 +110,7 @@ pnpm run deploy
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/) - Cloudflare Pages
   - Recommend using Cloudflare Pages for deployment
   - Download your Pages project config `npx wrangler pages download config <PROJECT_NAME>`
+- Static Hosting, When deploying to static hosting, you can deploy React Router the same as any other single page application with React.
 
 ## Shadcn/ui Theme Tooling
 
@@ -125,7 +125,7 @@ pnpm run deploy
 app/
 ├── app.css                 # 全局样式文件，只允许有这一个 css 文件
 
-├── features/                # 业务模块，例如首页、登录、用户中心等
+├── features/                # 业务模块，例如首页、登录、用户中心等，小型项目可耦合到 routes 中
 │   └── dashboard/
 │       ├── ChartPanel.tsx   # 专属组件
 │       ├── StatsCard.tsx    # 专属组件
@@ -145,7 +145,7 @@ app/
 │   ├── env.ts               # 环境变量
 │   └── uiLabels.ts          # 按钮/标题等文案常量
 
-├── context/                 # 所有 Context\Provider 相关的逻辑
+├── context/                 # 所有 Context/Provider 相关的逻辑
 │   └── AppKitProvider.tsx   # AppKit evm wallet
 
 ├── hooks/                   # 自定义 Hook
@@ -184,15 +184,15 @@ llms/                        # llms 文档目录
 
 ## ✅ Todo List
 
-- [ ] 修改 ai 相关文档
-- [ ] 修改描述文档
-- [ ] 修复控制台错误
-- [ ] 优化 UI
-- [ ] 添加合约读取写入界面
-- [ ] 添加 zustand
 - [ ] 部署 cf 命令
+- [ ] 添加合约读取写入界面
+- [ ] 修复控制台错误
 - [ ] ky，对幂等请求加自动重试，结合后端库，TypeScript：给返回值一个“强类型出口”
-- [ ] 添加 @tanstack/react-query 和 @lukemorales/query-key-factory 示例，读操作不要使用 toast（刷新可使用），使用静态组件显示（封装查询失败的组件），写操作手动触发，可使用 toast 组件，参考https://tanstack.com/query/latest/docs/framework/react/quick-start 需要手动点击刷新的 enabled: false,设置，useQueries 等常用给出示例
-- [ ] 新建脚本script目录，常用脚本，例如下载 llms 文件，规则等文件
-- [ ] 安全性，token 基于 only Cookie
+- [ ] 优化 tanstack query，添加 @lukemorales/query-key-factory 的支持和例子
+  - 读操作不要使用 toast 提示（可使用静态组件显示错误），刷新读取可使用 toast
+  - 写操作手动触发，可使用 toast 提示，参考 https://tanstack.com/query/latest/docs/framework/react/quick-start
+  - 需要手动点击刷新，需要 enabled: false 设置
+  - useQuery、useQueries、useMutation 常用 hooks 给出示例
+- [ ] 优化 UI 和一些描述文字
 - [ ] 字体: 字体下载到本地使用避免开发中获取不到谷歌字体问题
+- [ ] 安全性，token 基于 only Cookie

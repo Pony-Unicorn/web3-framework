@@ -39,7 +39,7 @@ const features = [
   },
 ]
 
-const createCommandStr = 'pnpm dlx degit Pony-Unicorn/web3-framework my-project'
+const createCommandStr = 'pnpm dlx degit Pony-Unicorn/web3-template my-project'
 
 export default function Home() {
   return (
@@ -59,7 +59,7 @@ export default function Home() {
             value={createCommandStr}
             className="group from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 focus:ring-primary/50 dark:focus:ring-primary/30 relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br p-0.5 text-sm font-medium text-white focus:ring-2 focus:outline-none"
           >
-            <span className="text-foreground text-sm group-hover:text-white sm:text-base">
+            <span className="text-sm text-white/90 group-hover:text-white sm:text-base">
               <span className="hidden sm:inline">{createCommandStr}</span>
               <span className="sm:hidden">pnpm dlx degit ...</span>
             </span>

@@ -116,7 +116,7 @@ export default function About() {
                       <span className="text-primary font-semibold">
                         decentralized believer
                       </span>
-                      , not a believer in cryptocurrency.
+                      , and I love building with crypto.
                     </p>
                   </div>
                 </div>
@@ -127,8 +127,8 @@ export default function About() {
                   </div>
                   <div>
                     <p className="text-foreground">
-                      Currently my main job
-                      <span className="text-accent font-semibold">GameFi</span>.
+                      🔭 Currently my main job GameFi, focused on quant trading
+                      strategy research.
                     </p>
                   </div>
                 </div>
@@ -141,13 +141,13 @@ export default function About() {
                     <p className="text-foreground">
                       I&apos;m currently learning
                       <span className="text-primary font-semibold">
-                        Algorithm design
+                        &nbsp;Algorithm design
                       </span>
-                      and
+                      &nbsp;and
                       <span className="text-primary font-semibold">
-                        Blockchain
+                        &nbsp;Blockchain
                       </span>
-                      related knowledge.
+                      &nbsp;related knowledge.
                     </p>
                   </div>
                 </div>
@@ -158,25 +158,25 @@ export default function About() {
                   </div>
                   <div>
                     <p className="text-foreground">
-                      How to reach me: Check out my
+                      🌱 How to reach me: Check out my
                       <a
                         href="https://github.com/Pony-Unicorn"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent hover:text-accent/80 underline transition-colors"
+                        className="hover:text-accent/80 underline transition-colors"
                       >
-                        GitHub
+                        &nbsp;GitHub
                       </a>
-                      or create
+                      &nbsp;or create
                       <a
-                        href="https://github.com/Pony-Unicorn/web3-framework/issues"
+                        href="https://github.com/Pony-Unicorn/web3-template/issues"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent hover:text-accent/80 underline transition-colors"
+                        className="hover:text-accent/80 underline transition-colors"
                       >
-                        issues
+                        &nbsp;issues
                       </a>
-                      to discuss.
+                      &nbsp;to discuss.
                     </p>
                   </div>
                 </div>
@@ -310,7 +310,7 @@ export default function About() {
                 </Badge>
               </a>
               <a
-                href="https://github.com/Pony-Unicorn/web3-framework/issues"
+                href="https://github.com/Pony-Unicorn/web3-template/issues"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"

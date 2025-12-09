@@ -1,14 +1,13 @@
-export interface IApiResponse<T> {
-  result: T
-  statusCode: number
-  message: string
+export type IApiMessage = { message: string }
+
+export type IApiListResponse<T> = {
+  items: T[]
+  total: number
+  page: number
+  pageSize: number
 }
 
-export interface IApiResponseData<T> {
-  data: IApiResponse<T>
-}
-
-export interface ILogin {
+export type ILogin = {
   nickname: string
   avatarUrl: string
 }
